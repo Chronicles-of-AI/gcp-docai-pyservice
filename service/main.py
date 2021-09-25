@@ -30,5 +30,5 @@ if settings.BACKEND_CORS_ORIGINS:
         allow_headers=["*"],
     )
 
-app.include_router(user_router, prefix=settings.API_V1_STR, tags=["Admin"])
+app.include_router(user_router, prefix=f"{settings.API_V1_STR}/users", tags=["Admin"])
 app.include_router(login_router, prefix=settings.API_V1_STR, tags=["Login"])
