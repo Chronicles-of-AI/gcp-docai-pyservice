@@ -7,8 +7,8 @@ import logging
 from dotenv import load_dotenv
 
 load_dotenv()
-from db.init_db import init_db
-from db.session import SessionLocal
+from docai.db.init_db import init_db
+from docai.db.session import SessionLocal
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

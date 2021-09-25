@@ -1,5 +1,5 @@
 # Copyright (c) 2021 Nikhil Akki
-# 
+#
 # This software is released under the MIT License.
 # https://opensource.org/licenses/MIT
 
@@ -10,10 +10,10 @@ from fastapi import APIRouter, Body, Depends, HTTPException
 from sqlalchemy.orm import Session
 from pydantic.networks import EmailStr
 
-from admin import models, schemas
-from admin.controllers import user
-from admin import crud
-from core.config import settings
+from docai.admin import models, schemas
+from docai.admin.controllers import user
+from docai.admin import crud
+from docai.core.config import settings
 
 router = APIRouter()
 

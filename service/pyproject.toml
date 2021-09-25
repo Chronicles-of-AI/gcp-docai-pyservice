@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "docai-pyservice"
+name = "docai"
 version = "0.1.0"
 description = "GCP's Doc AI wrapper written in Python based RESTful service using FastAPI"
-authors = ["Nikhil Akki <17634231+nikhilakki@users.noreply.github.com"]
+authors = ["Nikhil Akki <nikhil.akki@outlook.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]

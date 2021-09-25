@@ -10,10 +10,10 @@ from fastapi import APIRouter, Body, Depends, HTTPException
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
 
-from db import get_db
-from admin import crud, models, schemas, controllers
-from core import security
-from core.config import settings
+from docai.db import get_db
+from docai.admin import crud, models, schemas, controllers
+from docai.core import security
+from docai.core.config import settings
 
 router = APIRouter()
 

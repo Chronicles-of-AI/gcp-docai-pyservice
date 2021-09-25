@@ -11,7 +11,7 @@ load_dotenv()
 
 from tenacity import after_log, before_log, retry, stop_after_attempt, wait_fixed
 
-from db.session import SessionLocal
+from docai.db.session import SessionLocal
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

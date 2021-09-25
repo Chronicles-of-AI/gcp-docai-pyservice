@@ -10,10 +10,10 @@ from jose import jwt
 from pydantic import ValidationError
 from sqlalchemy.orm import Session
 
-from admin import crud, models, schemas
-from core import security
-from core.config import settings
-from db import get_db
+from docai.admin import crud, models, schemas
+from docai.core import security
+from docai.core.config import settings
+from docai.db import get_db
 
 
 reusable_oauth2 = OAuth2PasswordBearer(

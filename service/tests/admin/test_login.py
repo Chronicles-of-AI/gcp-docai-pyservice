@@ -10,7 +10,7 @@ from fastapi.testclient import TestClient
 from dotenv import load_dotenv
 
 load_dotenv()
-from core.config import settings
+from docai.core.config import settings
 
 
 def test_get_access_token(client: TestClient) -> None:

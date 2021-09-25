@@ -8,10 +8,10 @@ from typing import Dict
 from fastapi.testclient import TestClient
 from sqlalchemy.orm import Session
 
-from admin import crud
-from core.config import settings
-from admin.models.user import User
-from admin.schemas.user import UserCreate, UserUpdate
+from docai.admin import crud
+from docai.core.config import settings
+from docai.admin.models.user import User
+from docai.admin.schemas.user import UserCreate, UserUpdate
 from tests.utils.utils import random_email, random_lower_string
 
 

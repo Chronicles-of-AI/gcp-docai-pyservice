@@ -13,9 +13,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-from admin import crud
-from core.config import settings
-from admin.schemas.user import UserCreate
+from docai.admin import crud
+from docai.core.config import settings
+from docai.admin.schemas.user import UserCreate
 from tests.utils.utils import random_email, random_lower_string
 
 

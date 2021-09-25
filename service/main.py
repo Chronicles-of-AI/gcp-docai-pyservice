@@ -10,10 +10,10 @@ load_dotenv()
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
 
-from core.config import settings
+from docai.core.config import settings
 
 # routes
-from admin.router import user_router, login_router
+from docai.admin.router import user_router, login_router
 
 
 app = FastAPI(

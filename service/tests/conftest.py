@@ -11,8 +11,8 @@ import pytest
 from fastapi.testclient import TestClient
 from sqlalchemy.orm import Session
 
-from core.config import settings
-from db.session import SessionLocal
+from docai.core.config import settings
+from docai.db.session import SessionLocal
 from main import app
 from tests.utils.user import authentication_token_from_email
 from tests.utils.utils import get_superuser_token_headers

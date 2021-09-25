@@ -1,11 +1,12 @@
 # Copyright (c) 2021 Nikhil Akki
-# 
+#
 # This software is released under the MIT License.
 # https://opensource.org/licenses/MIT
 
 from sqlalchemy import Boolean, Column, Integer, String
+
 # from sqlalchemy.orm import relationship
-from db.base_class import Base
+from docai.db.base_class import Base
 
 
 class User(Base):

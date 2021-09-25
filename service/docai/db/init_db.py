@@ -5,11 +5,11 @@
 
 from sqlalchemy.orm import Session
 
-from admin import crud, schemas
-from core.config import settings
-from db import base  # noqa: F401
+from docai.admin import crud, schemas
+from docai.core.config import settings
+from docai.db import base  # noqa: F401
 
-# make sure all SQL Alchemy models are imported (app.db.base) before initializing DB
+# make sure all SQL Alchemy models are imported (docai.db.base) before initializing DB
 # otherwise, SQL Alchemy might fail to initialize relationships properly
 # for more details: https://github.com/tiangolo/full-stack-fastapi-postgresql/issues/28
 

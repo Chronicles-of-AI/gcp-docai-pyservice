@@ -9,9 +9,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-from admin import crud
-from core.security import verify_password
-from admin.schemas.user import UserCreate, UserUpdate
+from docai.admin import crud
+from docai.core.security import verify_password
+from docai.admin.schemas.user import UserCreate, UserUpdate
 from tests.utils.utils import random_email, random_lower_string
 
 
