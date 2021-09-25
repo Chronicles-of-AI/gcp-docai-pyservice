@@ -52,6 +52,11 @@ class Settings(BaseSettings):
     FIRST_SUPERUSER: EmailStr
     FIRST_SUPERUSER_PASSWORD: str
     USERS_OPEN_REGISTRATION: bool = False
+    # GCP config
+    PROJECT_ID: str
+    LOCATION: str
+    PROCESSOR_ID: str
+    STORAGE_DIR: str = "./storage"
 
     class Config:
         case_sensitive = True

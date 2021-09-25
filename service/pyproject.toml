@@ -18,6 +18,8 @@ python-dotenv = "^0.19.0"
 python-multipart = "^0.0.5"
 tenacity = "^8.0.1"
 alembic = "^1.7.3"
+google-cloud-documentai = "^1.0.0"
+aiofiles = "^0.7.0"
 
 [tool.poetry.dev-dependencies]
 pylama = "^7.7.1"
