@@ -28,6 +28,7 @@ FROM base as final
 RUN apk add --no-cache libffi libpq
 COPY --from=builder /venv /venv
 ENV PATH="/venv/bin:$PATH"
+EXPOSE 8000
 WORKDIR /app
 COPY . .
 ENTRYPOINT [ "uvicorn" ]

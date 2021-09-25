@@ -40,3 +40,8 @@ app.include_router(gcp_docai_router, prefix=settings.API_V1_STR, tags=["GCP Doc 
 
 
 os.makedirs(settings.STORAGE_DIR, exist_ok=True)
+
+
+@app.get("/")
+def health_check():
+    return {"response": "Health check successful!"}

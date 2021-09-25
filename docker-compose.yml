@@ -1,0 +1,51 @@
+version: "3.9"
+    
+services:
+  db:
+    image: postgres:13-alpine
+    volumes:
+      - ./pgdata:/var/lib/mysql
+    restart: on-failure
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    
+  docai:
+    depends_on:
+      - db
+    image: docai:latest
+    volumes:
+      - ./service/:/app
+      - ./storage:/app/storage
+    ports:
+      - "8000:8000"
+    restart:  on-failure
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+      DOMAIN: localhost
+      DOCKER_IMAGE_BACKEND: docai-pyservice
+      BACKEND_CORS_ORIGINS: '["http://localhost:3000"]'
+      PROJECT_NAME: docai-pyservice
+      SECRET_KEY: ${SECRET_KEY}
+      FIRST_SUPERUSER: admin@docai.com
+      FIRST_SUPERUSER_PASSWORD: changethis
+      USERS_OPEN_REGISTRATION: "false"
+      POSTGRES_SERVER: db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: changethis
+      POSTGRES_DB: postgres
+      SERVER_NAME: docai-service
+      SERVER_HOST: http://db
+      PROJECT_NAME: docai-service
+      PROJECT_ID: ${PROJECT_ID}
+      LOCATION: 'us' # Format is 'us' or 'eu'
+      PROCESSOR_ID: ${PROCESSOR_ID} # Create processor in Cloud Console
+      STORAGE: /app/storage
+    entrypoint: ["/bin/sh"]
+    command: ["entrypoint.sh"]
+volumes:
+  db_data: {}
+  service: {}
+  storage: {}
