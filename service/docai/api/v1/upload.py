@@ -5,8 +5,10 @@
 
 import os
 from uuid import uuid4
-from fastapi import APIRouter, File, UploadFile
+from fastapi import APIRouter, File, UploadFile, Depends
 import aiofiles
+from docai.admin.controllers import user
+from docai.admin import models
 from docai.core.config import settings
 from starlette import responses
 
@@ -15,7 +17,10 @@ router = APIRouter()
 
 
 @router.post("/upload/pdf")
-async def post_endpoint(file: UploadFile = File(...)):
+async def post_endpoint(
+    file: UploadFile = File(...),
+    current_user: models.User = Depends(user.get_current_active_superuser),
+):
     filename = file.filename.lower().split(".")
     uid = str(uuid4())[-8:]
     save_file_name = os.path.join(settings.STORAGE_DIR, f"{uid}.pdf")
