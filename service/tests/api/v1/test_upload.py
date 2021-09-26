@@ -11,30 +11,16 @@ load_dotenv()
 from fastapi.testclient import TestClient
 from docai import app
 from docai.core.config import settings
-
+from tests.utils.utils import get_superuser_token_headers
 
 client = TestClient(app)
-
-
-def get_access_token():
-    login_data = {
-        "username": settings.FIRST_SUPERUSER,
-        "password": settings.FIRST_SUPERUSER_PASSWORD,
-    }
-    r = client.post(f"{settings.API_V1_STR}/login/access-token", data=login_data)
-    tokens = r.json()
-    return tokens
 
 
 def test_upload_file() -> None:
     url = f"{settings.API_V1_STR}/upload/pdf"
     print(f"{url=}")
     files = {"file": open(settings.TEST_PDF, "rb")}
-    tokens = get_access_token()
-    headers = {
-        "Authorization": "Bearer {}".format(tokens["access_token"]),
-    }
-    print(f"{files=}, {tokens=}, {headers=}")
+    headers = get_superuser_token_headers(client)
     response = client.post(url, files=files, headers=headers)
     response_dict = json.loads(response.text)
     check_dict = response_dict
