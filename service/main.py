@@ -8,8 +8,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
+from docai import app
 
 from docai.core.config import settings
 
@@ -19,9 +19,6 @@ from docai.admin.router import user_router, login_router
 # api routes
 from docai.api.v1 import upload_router, gcp_docai_router
 
-app = FastAPI(
-    title=settings.PROJECT_NAME, openapi_url=f"{settings.API_V1_STR}/openapi.json"
-)
 
 # Set all CORS enabled origins
 if settings.BACKEND_CORS_ORIGINS:
