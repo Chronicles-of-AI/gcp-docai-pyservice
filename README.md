@@ -42,6 +42,8 @@ STORAGE=./storage
 
 ### How to run?
 
+Tested on Linux (Fedora 34) & WSL2 (Ubuntu 20.04).
+
 ```bash
 # BELOW ACTION -> required only for first time setup
 git clone https://github.com/Chronicles-of-AI/gcp-docai-pyservice.git
@@ -51,6 +53,7 @@ cd gcp-docai-pyservice
 docker-compose up -d
 
 # BELOW ACTION -> required only for first time setup
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python - # install poetry 
 cd service
 poetry install # install dependencies
 poetry run bash prestart.sh # to setup DB schemas
