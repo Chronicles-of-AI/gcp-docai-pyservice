@@ -13,7 +13,7 @@ ENV PIP_DEFAULT_TIMEOUT=100 \
     PIP_NO_CACHE_DIR=1 \
     POETRY_VERSION=1.0.5
 
-RUN apk add --no-cache gcc libffi-dev musl-dev postgresql-dev g++ 
+RUN apk add --no-cache gcc libstdc++ libffi-dev musl-dev postgresql-dev g++ 
 RUN pip install "poetry==$POETRY_VERSION"
 RUN python -m venv /venv
 
@@ -25,7 +25,7 @@ RUN poetry build && /venv/bin/pip install dist/*.whl
 
 FROM base as final
 
-RUN apk add --no-cache libffi libpq
+RUN apk add --no-cache libffi libpq libstdc++
 COPY --from=builder /venv /venv
 ENV PATH="/venv/bin:$PATH"
 EXPOSE 8000
