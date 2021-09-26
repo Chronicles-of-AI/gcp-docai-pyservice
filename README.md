@@ -43,7 +43,18 @@ STORAGE=./storage
 ### How to run?
 
 ```bash
+# BELOW ACTION -> required only for first time setup
+git clone https://github.com/Chronicles-of-AI/gcp-docai-pyservice.git
+
+# REGULAR ACTION
+cd gcp-docai-pyservice
 docker-compose up -d
+
+# BELOW ACTION -> required only for first time setup
+cd service
+poetry install # install dependencies
+poetry run bash prestart.sh # to setup DB schemas
+poetry run bash tests.sh # to run tests
 ```
 
 Features -
@@ -53,7 +64,9 @@ Features -
 - [x] Docker compose for local dev
 - [x] User Login, registeration
 - [x] Authentication with JWT
+- [x] DB migrations setup using Alembic
 - [x] Tests suite using Pytest
+- [ ] Helper scripts to setup db and run migrations
 - [ ] Document AI Async implementation
 - [ ] gcloud deployment templates for cloud run/functions/bucket
 
