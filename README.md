@@ -51,6 +51,8 @@ Features -
 - [x] Document AI integration Sync
 - [x] Docker support
 - [x] Docker compose for local dev
+- [x] User Login, registeration
+- [x] Authentication with JWT
 - [x] Tests suite using Pytest
 - [ ] Document AI Async implementation
 - [ ] gcloud deployment templates for cloud run/functions/bucket
