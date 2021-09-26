@@ -74,3 +74,6 @@ Features -
 - [ ] gcloud deployment templates for cloud run/functions/bucket
 
 > Author - Nikhil Akki
+
+> License -
+> [MIT](https://github.com/Chronicles-of-AI/gcp-docai-pyservice/blob/main/LICENSE)
