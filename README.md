@@ -40,4 +40,19 @@ PROCESSOR_ID=<find process id from cloud console> # Create processor in Cloud Co
 STORAGE=./storage
 ```
 
+### How to run?
+
+```bash
+docker-compose up -d
+```
+
+Features -
+
+- [x] Document AI integration Sync
+- [x] Docker support
+- [x] Docker compose for local dev
+- [x] Tests suite using Pytest
+- [ ] Document AI Async implementation
+- [ ] gcloud deployment templates for cloud run/functions/bucket
+
 > Author - Nikhil Akki
